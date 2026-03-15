@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tmpmail-cli"
+version = "1.2.3"
+description = "A temporary email right from your terminal"
+readme = "README.md"
+license = "MIT"
+authors = [{name = "Siddharth Dushantha", email = "siddharth.dushantha@gmail.com"}]
+maintainers = [{name = "Siddharth Dushantha", email = "siddharth.dushantha@gmail.com"}]
+keywords = ["email", "temporary", "cli", "1secmail", "mailtm"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Communications :: Email",
+    "Topic :: Utilities"
+]
+requires-python = ">=3.7"
+dependencies = [
+    "requests>=2.25.0",
+    "beautifulsoup4>=4.9.0"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=6.0", "black>=22.0", "ruff>=0.1.0"]
+
+[project.scripts]
+tmpmail = "tmpmail.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/sdushantha/tmpmail"
+Repository = "https://github.com/sdushantha/tmpmail.git"
+BugTracker = "https://github.com/sdushantha/tmpmail/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]

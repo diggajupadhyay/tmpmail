@@ -1,9 +1,9 @@
 <h1 align="center">
   <img src="images/logo.png">
 </h1>
-<p align="center"> A temporary email right from your terminal written in POSIX sh</p><br>
+<p align="center"> A temporary email right from your terminal</p><br>
 
-<img src="images/demo.gif" align="right"> `tmpmail` is a command line utility written in POSIX `sh` that allows you to create a temporary email address
+<img src="images/demo.gif" align="right"> `tmpmail` is a command line utility that allows you to create a temporary email address
 and receive emails to the temporary email address. It uses 1secmail's [API](https://www.1secmail.com/api/)
 to receive emails.
 
@@ -16,13 +16,36 @@ use the `--browser` argument followed by the command needed to launch the web br
 <br>
 
 ## Dependencies
-- `w3m`
-- `curl`
-- [`jq`](https://github.com/stedolan/jq)
-- `xclip`
+
+**Python dependencies** (installed automatically with pip):
+- `requests`
+- `beautifulsoup4`
+
+**System dependencies** (required for full functionality):
+- `w3m` (or another browser for rendering HTML emails)
+- `xclip` (or another clipboard utility for the `--copy` feature)
 
 ## Installation
-### Install locally
+
+### Install with pip (Recommended)
+
+```bash
+# Install with pip
+$ pip install tmpmail-cli
+
+# Or with pipx for an isolated installation
+$ pipx install tmpmail-cli
+```
+
+### Install from source
+
+```bash
+$ git clone https://github.com/sdushantha/tmpmail.git
+$ cd tmpmail
+$ pip install .
+```
+
+### Install locally (Legacy shell script)
 
 ```bash
 # Download the tmpmail file and make it executable
